@@ -4,14 +4,12 @@ import DropdownList from "../DropdownList";
 import Button from "../Button";
 import { useState } from "react";
 
-const InputForm = () => {
+const InputForm = (props) => {
   const teams = ["Team 1", "Team 2", "Team 3"];
 
   const onSave = (event) => {
     event.preventDefault();
-    console.log(
-      `Form submited: ${name}, ${jobTitle}, ${imageAddress}, ${team}`
-    );
+    props.onAddAssociate({ name, jobTitle, imageAddress, team });
   };
 
   const [name, setName] = useState("");

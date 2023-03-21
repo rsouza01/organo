@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./TextField.css";
 
 const TextField = (props) => {
-  const [value, setValue] = useState("");
-
   const onType = (event) => {
     console.log(event.target.value);
     props.onChange(event.target.value);
