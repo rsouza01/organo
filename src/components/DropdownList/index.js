@@ -2,11 +2,11 @@ import "./DropdownList.css";
 
 const DropdownList = (props) => {
   return (
-    <div>
+    <div className="dropdown-list">
       <label>{props.label}</label>
       <select>
         {props.items.map((item) => (
-          <option>{item}</option>
+          <option key={item}>{item}</option>
         ))}
       </select>
     </div>
