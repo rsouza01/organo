@@ -30,6 +30,7 @@ function App() {
           name={team.name}
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
+          associates={associates}
         />
       ))}
     </div>
