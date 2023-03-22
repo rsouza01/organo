@@ -5,8 +5,6 @@ import Button from "../Button";
 import { useState } from "react";
 
 const InputForm = (props) => {
-  const teams = ["Team 1", "Team 2", "Team 3"];
-
   const onSave = (event) => {
     event.preventDefault();
     props.onAddAssociate({ name, jobTitle, imageAddress, team });
@@ -44,7 +42,7 @@ const InputForm = (props) => {
         />
         <DropdownList
           label="Teams"
-          items={teams}
+          items={props.teams}
           value={team}
           onChange={(value) => setTeam(value)}
         />
