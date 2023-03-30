@@ -13,6 +13,7 @@ const Buscador = ({ search, setSearch }: Props) => {
       <input
         value={search}
         onChange={(event) => setSearch(event.target.value)}
+        placeholder="Buscar"
       />
       <CgSearch size={20} color="#4c4d5E" />
     </div>
