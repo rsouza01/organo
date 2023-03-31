@@ -1,7 +1,7 @@
-import cardapio from "./itens.json";
-import Item from "./Item/Item";
-import styles from "./Itens.module.scss";
-import { useEffect, useState } from "react";
+import cardapio from 'data/cardapio.json';
+import Item from './Item/Item';
+import styles from './Itens.module.scss';
+import { useEffect, useState } from 'react';
 
 interface Props {
   search: string;
@@ -14,7 +14,7 @@ const Itens = (props: Props) => {
   const { search, filtro, ordenador } = props;
 
   useEffect(() => {
-    const testaBusca = (title: string) => new RegExp(search, "i").test(title);
+    const testaBusca = (title: string) => new RegExp(search, 'i').test(title);
     const testaFiltro = (id: number) => {
       if (filtro !== null) return filtro === id;
       return true;
@@ -22,14 +22,14 @@ const Itens = (props: Props) => {
 
     const ordenar = (lista: typeof cardapio) => {
       switch (ordenador) {
-        case "porcao":
-          return lista.sort((a, b) => (a.size > b.size ? 1 : -1));
-        case "qtd_pessoas":
-          return lista.sort((a, b) => (a.serving > b.serving ? 1 : -1));
-        case "preco":
-          return lista.sort((a, b) => (a.price > b.price ? 1 : -1));
-        default:
-          return lista;
+      case 'porcao':
+        return lista.sort((a, b) => (a.size > b.size ? 1 : -1));
+      case 'qtd_pessoas':
+        return lista.sort((a, b) => (a.serving > b.serving ? 1 : -1));
+      case 'preco':
+        return lista.sort((a, b) => (a.price > b.price ? 1 : -1));
+      default:
+        return lista;
       }
     };
     const novaLista = cardapio.filter(
