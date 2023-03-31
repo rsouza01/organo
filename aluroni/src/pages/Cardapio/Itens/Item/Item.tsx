@@ -6,12 +6,12 @@ import classNames from "classnames";
 type Props = typeof cardapio[0];
 
 const Item = (props: Props) => {
-  const { title, description, size, price, category, serving } = props;
+  const { title, description, category, size, serving, price, photo } = props;
 
   return (
     <div className={styles.item}>
       <div className={styles.item__imagem}>
-        <img src={logo} alt={title}></img>
+        <img src={photo} alt={title}></img>
       </div>
       <div className={styles.item__descricao}>
         <div className={styles.item__titulo}>
