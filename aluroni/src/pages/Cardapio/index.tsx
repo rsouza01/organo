@@ -4,6 +4,7 @@ import Buscador from './Buscador';
 import Filtros from './Filtros';
 import Ordenador from './Ordernador';
 import Itens from './Itens';
+import stylesTema from 'styles/Tema.module.scss';
 
 const Cardapio = () => {
   const [search, setSearch] = useState('');
@@ -12,7 +13,7 @@ const Cardapio = () => {
 
   return (
     <section className={styles.cardapio}>
-      <h3 className={styles.cardapio__titulo}>Cardápio</h3>
+      <h3 className={stylesTema.titulo}>Cardápio</h3>
       <Buscador search={search} setSearch={setSearch} />
       <div className={styles.cardapio__filtros}>
         <Filtros filtro={filtro} setFiltro={setFiltro} />
