@@ -2,6 +2,7 @@ import cardapio from 'data/cardapio.json';
 import Item from './Item/Item';
 import styles from './Itens.module.scss';
 import { useEffect, useState } from 'react';
+import { Cardapio } from 'types/Prato';
 
 interface Props {
   search: string;
@@ -20,16 +21,16 @@ const Itens = (props: Props) => {
       return true;
     };
 
-    const ordenar = (lista: typeof cardapio) => {
+    const ordenar = (lista: Cardapio) => {
       switch (ordenador) {
-      case 'porcao':
-        return lista.sort((a, b) => (a.size > b.size ? 1 : -1));
-      case 'qtd_pessoas':
-        return lista.sort((a, b) => (a.serving > b.serving ? 1 : -1));
-      case 'preco':
-        return lista.sort((a, b) => (a.price > b.price ? 1 : -1));
-      default:
-        return lista;
+        case 'porcao':
+          return lista.sort((a, b) => (a.size > b.size ? 1 : -1));
+        case 'qtd_pessoas':
+          return lista.sort((a, b) => (a.serving > b.serving ? 1 : -1));
+        case 'preco':
+          return lista.sort((a, b) => (a.price > b.price ? 1 : -1));
+        default:
+          return lista;
       }
     };
     const novaLista = cardapio.filter(
